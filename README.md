@@ -1,5 +1,5 @@
-Node-Webkit Template
-====================
+node-webkit-kit
+===============
 
 Node-Webkit Template is example project for how to setup a node-webkit 
 configured for continuous testing, building and delivery.  You can fork 
