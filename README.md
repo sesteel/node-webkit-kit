@@ -1,10 +1,11 @@
 node-webkit-kit
 ===============
 
-Node-Webkit Template is example project for how to setup a node-webkit 
-configured for continuous testing, building and delivery.  You can fork 
-this project to start other, new projects.  If you use this project, please 
-submit pull requests for improvements and/or new features your team has made.  
+Node-webkit-kit is a project template node-webkit applications.  It is
+configured for continuous testing, building and delivery.  You may fork 
+this project to start other, new node-webkit projects.  If you use this 
+project and make generally useful improvements, please submit pull requests 
+for your modifications so everyone may benefit.  
 
 To build you must first install Node.js on the dev/build system.  Then, within
 the project directory (either for this project or your forked and renamed 
@@ -21,4 +22,4 @@ project) run each of the following commands:
 Using the Template for Development
 ----------------------------------
 
-The  
+TBD
