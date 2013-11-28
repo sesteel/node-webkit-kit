@@ -1,5 +1,5 @@
 {
-  "name": "node-webkit-template",
+  "name": "node-webkit-kit",
   "version": "0.13.3",
   "description": "Example Node-Webkit Project",
   "devDependencies": {
@@ -14,22 +14,22 @@
     "request": "~2.27.0",
     "exec": "0.0.6"
   }
-  "homepage": "https://github.com/sesteel/node-webkit-template",
+  "homepage": "https://github.com/sesteel/node-webkit-kit",
   "author": {
     "name": "sesteel",
     "url": "http://www.kryas.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sesteel/node-webkit-template.git"
+    "url": "git://github.com/sesteel/node-webkit-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/sesteel/node-webkit-template/issues"
+    "url": "https://github.com/sesteel/node-webkit-kit/issues"
   },
   "licenses": [
     {
       "type": "BSD",
-      "url": "https://github.com/sesteel/node-webkit-template/LICENSE"
+      "url": "https://github.com/sesteel/node-webkit-kit/LICENSE"
     }
   ],
   "scripts": {
@@ -40,7 +40,9 @@
     "grunt-lib-contrib": "~0.6.1"
   },
   "keywords": [
-    "gruntplugin"
+    "node-webkit",
+    "template",
+    "project"
   ],
   "contributors": [
     {
