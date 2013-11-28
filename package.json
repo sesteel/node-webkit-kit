@@ -1,10 +1,51 @@
 {
-  "name": "bonfire",
+  "name": "node-webkit-template",
   "version": "0.13.3",
+  "description": "Example Node-Webkit Project",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-uglify": "~0.2.7"
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-exec": "~0.4.2",
+    "grunt-node-webkit-builder": "~0.1.11",
+    "rimraf": "~2.2.2",
+    "adm-zip": "~0.4.3",
+    "request": "~2.27.0",
+    "exec": "0.0.6"
   }
+  "homepage": "https://github.com/sesteel/node-webkit-template",
+  "author": {
+    "name": "sesteel",
+    "url": "http://www.kryas.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sesteel/node-webkit-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sesteel/node-webkit-template/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/sesteel/node-webkit-template/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "dependencies": {
+    "uglify-js": "~2.4.0",
+    "grunt-lib-contrib": "~0.6.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "contributors": [
+    {
+      "name": "Stan Steel",
+      "url":  "http://www.kryas.com"
+    }
+  ]
 }
