@@ -14,7 +14,7 @@ project) run each of the following commands:
  * npm install -g grunt-cli              --save-dev
  * npm install grunt                     --save-dev
  * npm install grunt-contrib-uglify      --save-dev
- * npm install grunt-exec                --save-dev
+ * npm install grunt-contrib-copy        --save-dev
  * npm install grunt-node-webkit-builder --save-dev
  * npm install rimraf                    --save-dev 
  

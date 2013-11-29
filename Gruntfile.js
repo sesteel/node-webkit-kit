@@ -19,31 +19,41 @@ module.exports = function(grunt) {
         banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build : {
-        src : 'src/<%= pkg.name %>.js',
+        src : 'app/js/main.js',
         dest : buildPath + '/js/<%= pkg.name %>-' + package.version + '.min.js'
       }
+    },
+    copy: {
+      build: {
+        cwd: 'app',
+        src: [ '**', '!**/*.less', '!test', '!**/*.js' ],
+        dest: 'bin',
+        expand: true
+      },
     },
     nodewebkit: {
       options: {
           build_dir: buildPath, 
           mac: true,      
-          win: true,      
+          win: false,      
           linux32: false, 
           linux64: true   
       },
-      src: ['bin/js/**/*']
+      src: ['bin/**/*']
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-node-webkit-builder');
+  
   grunt.registerTask('clean', 'remove the bin folder', function() {
     rimraf.sync(path.join(__dirname, buildPath));
-  });  
+  });
+  
   // Default task(s).
-  grunt.registerTask('default', [ 'clean', 'uglify', 'nodewebkit']);
+  grunt.registerTask('default', [ 'clean', 'uglify', 'copy', 'nodewebkit']);
 
 
 };

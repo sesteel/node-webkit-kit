@@ -4,6 +4,7 @@
   "description": "Example Node-Webkit Project",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-cli": "~0.1",
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.7",
@@ -12,8 +13,16 @@
     "rimraf": "~2.2.2",
     "adm-zip": "~0.4.3",
     "request": "~2.27.0",
-    "exec": "0.0.6"
-  }
+    "exec": "0.0.6",
+    "grunt-contrib-copy": "~0.4.1"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "dependencies": {
+    "uglify-js": "~2.4.0",
+    "grunt-lib-contrib": "~0.6.1"
+  },  
   "homepage": "https://github.com/sesteel/node-webkit-kit",
   "author": {
     "name": "sesteel",
@@ -32,13 +41,6 @@
       "url": "https://github.com/sesteel/node-webkit-kit/LICENSE"
     }
   ],
-  "scripts": {
-    "test": "grunt travis --verbose"
-  },
-  "dependencies": {
-    "uglify-js": "~2.4.0",
-    "grunt-lib-contrib": "~0.6.1"
-  },
   "keywords": [
     "node-webkit",
     "template",
@@ -47,7 +49,7 @@
   "contributors": [
     {
       "name": "Stan Steel",
-      "url":  "http://www.kryas.com"
+      "url": "http://www.kryas.com"
     }
   ]
 }
