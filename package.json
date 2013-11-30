@@ -14,7 +14,9 @@
     "adm-zip": "~0.4.3",
     "request": "~2.27.0",
     "exec": "0.0.6",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-less": "~0.8.2"
   },
   "scripts": {
     "test": "grunt travis --verbose"
@@ -22,7 +24,7 @@
   "dependencies": {
     "uglify-js": "~2.4.0",
     "grunt-lib-contrib": "~0.6.1"
-  },  
+  },
   "homepage": "https://github.com/sesteel/node-webkit-kit",
   "author": {
     "name": "sesteel",

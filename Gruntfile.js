@@ -14,12 +14,25 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg : package,
     exec: remoteDependencies(),
+    clean: [buildPath+"/css", 
+            buildPath+"/html", 
+            buildPath+"/js", 
+            buildPath+"/node_modules", 
+            buildPath+"/res",
+            buildPath+"/releases"],
     uglify : {
       options : {
-        banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        mangle : true
+      },
+      compress: {
+        global_defs: {
+          "DEBUG": false
+        },
+        dead_code: true
       },
       build : {
-        src : 'app/js/main.js',
+        src : 'app/**/*.js',
         dest : buildPath + '/js/<%= pkg.name %>-' + package.version + '.min.js'
       }
     },
@@ -31,31 +44,46 @@ module.exports = function(grunt) {
         expand: true
       },
     },
+    less: {
+      development: {
+        options: {
+          paths: ['app/css']
+        },
+        files: {
+          'bin/css/style.css': 'app/css/style.less'
+        }
+      },
+      production: {
+        options: {
+          paths: ['app/css'],
+          cleancss: true
+        },
+        files: {
+          'bin/css/style.css': 'app/css/style.less'
+        }
+      }
+    },
     nodewebkit: {
       options: {
-          build_dir: buildPath, 
-          mac: true,      
-          win: false,      
-          linux32: false, 
-          linux64: true   
+          version:     '0.8.0',
+          app_name:    '<%= pkg.name %>',
+          app_version: '<%= pkg.version %>',
+          build_dir:   buildPath, 
+          mac:         true,      
+          win:         false,      
+          linux32:     false, 
+          linux64:     true   
       },
       src: ['bin/**/*']
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-node-webkit-builder');
-  
-  grunt.registerTask('clean', 'remove the bin folder', function() {
-    rimraf.sync(path.join(__dirname, buildPath));
-  });
-  
-  // Default task(s).
-  grunt.registerTask('default', [ 'clean', 'uglify', 'copy', 'nodewebkit']);
-
-
+  grunt.registerTask('default', [ 'clean', 'less', 'uglify', 'copy', 'nodewebkit']);
 };
 
 var remoteDependencies = function () {

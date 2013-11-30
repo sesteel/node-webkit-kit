@@ -1,5 +1,4 @@
 
 var main = function() {
-  
-  
+  func();
 };
