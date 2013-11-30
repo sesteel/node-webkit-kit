@@ -1,5 +1,6 @@
-node-webkit-kit
+node-webkit-kit 
 ===============
+[![Build Status](https://travis-ci.org/sesteel/node-webkit-kit.png?branch=master)](https://travis-ci.org/sesteel/node-webkit-kit)
 
 Node-webkit-kit is a project template node-webkit applications.  It is
 configured for continuous testing, building and delivery.  You may fork 
