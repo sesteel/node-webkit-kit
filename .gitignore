@@ -1,6 +1,7 @@
 build/
 bin/
 node_modules/
+reports/
 lib-cov
 *.seed
 *.log

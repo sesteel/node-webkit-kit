@@ -59,7 +59,7 @@ module.exports = function(grunt) {
           cleancss: true
         },
         files: {
-          'bin/css/style.css': 'app/css/style.less'
+          'bin/css/style.css':'app/css/style.less'
         }
       }
     },
@@ -75,6 +75,22 @@ module.exports = function(grunt) {
           linux64:     true   
       },
       src: ['bin/**/*']
+    },
+    plato: {
+      reports: {
+        options : {
+          exclude: /\.[0-9]+\.js$/,
+          complexity : {
+            logicalor :  true,
+            switchcase : true,
+            forin :      true,
+            trycatch :   true
+          }
+        },
+        files: {
+          'reports': ['app/js/**/*.js'],
+        },
+      },
     }
   });
 
@@ -83,7 +99,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-node-webkit-builder');
-  grunt.registerTask('default', [ 'clean', 'less', 'uglify', 'copy', 'nodewebkit']);
+  grunt.loadNpmTasks('grunt-plato');
+  grunt.registerTask('default', ['clean', 'less', 'uglify', 'copy', 'nodewebkit']);
+  grunt.registerTask('release', ['nodewebkit']);
+  grunt.registerTask('reports', ['plato']);
+  grunt.registerTask('travis',  ['clean', 'less', 'uglify', 'copy', 'nodewebkit', 'plato']);
 };
 
 var remoteDependencies = function () {

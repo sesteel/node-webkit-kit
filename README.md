@@ -19,6 +19,7 @@ project) run each of the following commands:
  * npm install grunt-contrib-copy        --save-dev
  * npm install grunt-node-webkit-builder --save-dev
  * npm install rimraf                    --save-dev 
+ * npm install grunt-plato               --save-dev
  
 
 Using the Template for Development
