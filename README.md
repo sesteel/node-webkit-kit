@@ -27,3 +27,7 @@ Using the Template for Development
 ----------------------------------
 
 TBD
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sesteel/node-webkit-kit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
